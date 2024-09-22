@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#stopwatch-section,
+#countdown-section {
+  margin: 20px;
+  padding: 20px;
+  border: 3px solid black;
+  border-radius: 10px;
+  display: inline-block;
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+#stopwatch-time,
+#countdown-time {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: black;
+  background-color: #e0e0e0;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: 3px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
+}
+
+#start-stopwatch,
+#start-countdown {
+  background-color: #4CAF50;
+  /* Green start button */
+  color: white;
+}
+
+#stop-stopwatch,
+#stop-countdown {
+  background-color: #f44336;
+  /* Red stop button */
+  color: white;
+}
+
+#reset-stopwatch,
+#reset-countdown {
+  background-color: #2196F3;
+  /* Blue reset button */
+  color: white;
+}
+
+#number-input button {
+  background-color: #32CD32;
+  /* Lime green for number inputs */
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  margin: 2px;
+}
