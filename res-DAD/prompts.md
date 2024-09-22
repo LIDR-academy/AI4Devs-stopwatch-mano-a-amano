@@ -81,6 +81,14 @@ I realized that if I ask to list only the changes, the IA doesn't inform the cod
 
     Last fix, show the stopwatch and the countdown divs in a column for desktop. Consider to fit the elements always inside the view.
 
+## prompt 8
+
+    when I click on set time in the countdown, a nan error appear. can you fix it disabling the set time button if no time is set?
+
+## prompt 9
+
+    when the countdown reaches 0, set a message saying "time is over" in  the element 'countdown-time' and disable again the set time and clear time button.
+
 # Conclusions
 
 Asking acknowledge to ChatGPT sometimes is not enough, and you have to remind him to respect the images and urls that you share, also specify what do you want to keep exactly (like the borders in the css) can help.

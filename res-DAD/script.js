@@ -65,11 +65,11 @@ document.getElementById('start-countdown').addEventListener('click', () => {
     countdownInterval = setInterval(() => {
       remainingTime -= 10;
       if (remainingTime <= 0) {
+        endCountdown();
         clearInterval(countdownInterval);
         remainingTime = 0;
-        endCountdown();
       }
-      document.getElementById('countdown-time').innerText = formatTime(remainingTime);
+      // document.getElementById('countdown-time').innerText = formatTime(remainingTime);
     }, 10);
     toggleCountdownButtons();
   }
@@ -88,6 +88,8 @@ document.getElementById('reset-countdown').addEventListener('click', () => {
   countdownRunning = false;
   toggleCountdownButtons();
 });
+
+document.getElementById('set-time').disabled = true;
 
 function updateCountdownButtons() {
   document.querySelectorAll('#number-input button').forEach(button => {
@@ -133,4 +135,6 @@ function parseInputTime(inputArray) {
 function updateDisplay() {
   let display = timeInput.join('');
   document.getElementById('countdown-time').innerText = display ? display : "00:00:00.000";
+  document.getElementById('set-time').disabled = timeInput.length === 0;
 }
+
