@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch & Countdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        input[type="text"] {
+            text-align: center;
+            width: 100%;
+        }
+        /* Animation for tab switching */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="bg-white p-8 rounded shadow-lg w-full max-w-md">
+    <!-- Tab Menu -->
+    <div class="flex justify-center mb-4">
+        <button id="tab-stopwatch" class="bg-blue-500 text-white px-4 py-2 rounded-l">Stopwatch</button>
+        <button id="tab-countdown" class="bg-gray-300 text-black px-4 py-2 rounded-r">Countdown</button>
+    </div>
+
+    <!-- Stopwatch Section (default visible) -->
+    <div id="stopwatch-section" class="fade-in">
+        <h2 class="text-2xl font-bold mb-4 text-center">Stopwatch</h2>
+        <div class="text-4xl text-center font-mono mb-4" id="stopwatch-display">00:00:00.000</div>
+        <div class="flex justify-center space-x-4">
+            <button class="bg-green-500 text-white px-4 py-2 rounded" id="stopwatch-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v18l14-9L5 3z" />
+                </svg>
+            </button>
+            <button class="bg-yellow-500 text-white px-4 py-2 rounded hidden" id="stopwatch-pause">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 9v6m4-6v6" />
+                </svg>
+            </button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hidden" id="stopwatch-reset">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v4m-6 6v4h12v-4" />
+                </svg>
+            </button>
+            <button class="bg-purple-500 text-white px-4 py-2 rounded hidden" id="stopwatch-lap">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.64 4.11a7.5 7.5 0 0110.72 0l.34.34m0 0a7.5 7.5 0 010 10.72l-.34.34m0 0a7.5 7.5 0 01-10.72 0l-.34-.34m0 0a7.5 7.5 0 010-10.72l.34-.34m10.72 10.72l-2.83-2.83" />
+                </svg>
+            </button>
+        </div>
+        <div class="mt-4 hidden" id="lap-section">
+            <h3 class="text-xl font-bold">Laps:</h3>
+            <ul id="lap-list" class="list-disc pl-6"></ul>
+        </div>
+    </div>
+
+    <!-- Countdown Section (hidden by default) -->
+    <div id="countdown-section" class="hidden fade-in">
+        <h2 class="text-2xl font-bold mb-4 text-center">Countdown</h2>
+        <input type="text" class="text-4xl text-center font-mono mb-4" id="countdown-display" value="00:00:00.000">
+        <div class="flex justify-center space-x-4">
+            <button class="bg-green-500 text-white px-4 py-2 rounded" id="countdown-start">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v18l14-9L5 3z" />
+                </svg>
+            </button>
+            <button class="bg-yellow-500 text-white px-4 py-2 rounded hidden" id="countdown-pause">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 9v6m4-6v6" />
+                </svg>
+            </button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hidden" id="countdown-reset">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v4m-6 6v4h12v-4" />
+                </svg>
+            </button>
+            <button class="bg-red-500 text-white px-4 py-2 rounded hidden" id="countdown-clear">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
