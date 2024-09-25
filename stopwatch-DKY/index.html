@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch and Countdown</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="menu" class="container">
+    <h1>Select Timer Mode</h1>
+    <div class="button-container">
+      <button id="stopwatch-btn">
+        <img src="https://example.com/green-arrow-upwards.png" alt="Stopwatch">
+        <p>Stopwatch</p>
+      </button>
+      <button id="countdown-btn">
+        <img src="https://example.com/red-arrow-downwards.png" alt="Countdown">
+        <p>Countdown</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Stopwatch Interface -->
+  <div id="stopwatch-interface" class="hidden container">
+    <h1>Stopwatch</h1>
+    <div id="stopwatch-timer" class="timer">00:00:00</div>
+    <div class="button-container">
+      <button id="stopwatch-start" class="green-button">Start</button>
+      <button id="stopwatch-clear" class="red-button">Clear</button>
+    </div>
+    <button id="back-to-menu-1" class="back-button">← Back</button>
+  </div>
+
+  <!-- Countdown Interface -->
+  <div id="countdown-interface" class="hidden container">
+    <h1>Countdown</h1>
+    <div id="countdown-timer" class="timer">00:00:00</div>
+    <div id="countdown-keypad" class="keypad">
+      <button class="number-btn">1</button>
+      <button class="number-btn">2</button>
+      <button class="number-btn">3</button>
+      <button class="number-btn">4</button>
+      <button class="number-btn">5</button>
+      <button class="number-btn">6</button>
+      <button class="number-btn">7</button>
+      <button class="number-btn">8</button>
+      <button class="number-btn">9</button>
+      <button class="number-btn">0</button>
+    </div>
+    <div class="button-container">
+      <button id="set-btn" class="green-button">Set</button>
+      <button id="countdown-clear" class="grey-button">Clear</button>
+    </div>
+    <div id="countdown-controls" class="hidden button-container">
+      <button id="countdown-start" class="green-button">Start</button>
+      <button id="countdown-clear-final" class="red-button">Clear</button>
+    </div>
+    <button id="back-to-menu-2" class="back-button">← Back</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
