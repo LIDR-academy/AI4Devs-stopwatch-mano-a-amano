@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container, .timer-screen {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.main-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.main-btn:hover {
+    background-color: #0056b3;
+}
+
+.timer {
+    font-size: 3rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;  /* Adjusted width to ensure all numbers are visible */
+    background-color: #f8f8f8;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input.timer {
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.control-btn {
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.control-btn.start {
+    background-color: green;
+    color: white;
+}
+
+.control-btn.pause {
+    background-color: blue;
+    color: white;
+}
+
+.control-btn.clear {
+    background-color: red;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.timer-screen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-screen.visible {
+    display: flex;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.back-link:hover {
+    color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .timer {
+        font-size: 2rem;
+        width: 200px;  /* Adjusted for mobile view */
+    }
+
+    .control-btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}

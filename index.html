@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch & Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="home-screen" class="container visible">
+        <h1>Stopwatch & Countdown</h1>
+        <div class="buttons">
+            <button id="stopwatch-btn" class="main-btn">Stopwatch</button>
+            <button id="countdown-btn" class="main-btn">Countdown</button>
+        </div>
+    </div>
+
+    <!-- Stopwatch Screen -->
+    <div id="stopwatch-screen" class="timer-screen hidden">
+        <div class="timer-container">
+            <h1>Stopwatch</h1>
+            <div id="stopwatch-display" class="timer">00:00:00</div>
+            <div class="control-buttons">
+                <button id="stopwatch-start" class="control-btn start">Start</button>
+                <button id="stopwatch-clear" class="control-btn clear">Clear</button>
+            </div>
+            <a href="#" id="back-to-home-1" class="back-link">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Countdown Screen -->
+    <div id="countdown-screen" class="timer-screen hidden">
+        <div class="timer-container">
+            <h1>Countdown</h1>
+            <input type="text" id="countdown-input" class="timer" placeholder="00:00:00" maxlength="8">
+            <div class="control-buttons">
+                <button id="countdown-start" class="control-btn start">Start</button>
+                <button id="countdown-clear" class="control-btn clear">Clear</button>
+            </div>
+            <a href="#" id="back-to-home-2" class="back-link">Back to Home</a>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
