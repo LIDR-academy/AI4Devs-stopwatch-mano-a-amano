@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>00:00:00</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="menu">
+      <h2>Select Timer Type</h2>
+      <button id="selectStopwatch">Stopwatch</button>
+      <button id="selectCountdown">Countdown</button>
+    </div>
+
+    <!-- Stopwatch Screen -->
+    <div id="stopwatch" class="hidden">
+      <span id="stopwatchTime">00:00:00</span
+      ><small id="stopwatchMilliseconds">000</small>
+      <div id="stopwatchControls">
+        <button id="startStopwatch"><i class="fas fa-play"></i> Start</button>
+        <button id="pauseStopwatch" class="hidden">
+          <i class="fas fa-pause"></i> Pause
+        </button>
+        <button id="continueStopwatch" class="hidden">
+          <i class="fas fa-play"></i> Continue
+        </button>
+        <button id="clearStopwatch"><i class="fas fa-times"></i> Clear</button>
+      </div>
+      <button id="backToMenu"><i class="fas fa-arrow-left"></i> Back</button>
+    </div>
+
+    <!-- Countdown Screen -->
+    <div id="countdown" class="hidden">
+      <div id="timePicker">
+        <label for="hours">Hours: </label>
+        <input type="number" id="hours" min="0" max="23" value="0" />
+        <label for="minutes">Minutes: </label>
+        <input type="number" id="minutes" min="0" max="59" value="0" />
+        <label for="seconds">Seconds: </label>
+        <input type="number" id="seconds" min="0" max="59" value="0" />
+        <button id="setCountdownTime">
+          <i class="fas fa-clock"></i> Set Time
+        </button>
+      </div>
+
+      <span id="countdownTime">00:00:00</span
+      ><small id="countdownMilliseconds">000</small>
+      <div id="countdownControls">
+        <button id="startCountdown"><i class="fas fa-play"></i> Start</button>
+        <button id="pauseCountdown" class="hidden">
+          <i class="fas fa-pause"></i> Pause
+        </button>
+        <button id="continueCountdown" class="hidden">
+          <i class="fas fa-play"></i> Continue
+        </button>
+        <button id="clearCountdown"><i class="fas fa-times"></i> Clear</button>
+      </div>
+
+      <div id="countdownProgressBarContainer">
+        <progress id="countdownProgressBar" max="100" value="0"></progress>
+      </div>
+      <button id="backToMenuCountdown">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
