@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch & Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        #app {
+            text-align: center;
+            width: 400px;
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        #timer, #countdownTimer {
+            font-size: 48px;
+            font-weight: bold;
+            background-color: #e5eaff;
+            border: 3px solid black;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Timer display where milliseconds are directly under the seconds */
+        .time-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hours, .minutes, .seconds {
+            font-size: 48px;
+        }
+
+        .milliseconds {
+            font-size: 18px;
+            position: absolute;
+            top: 55px; /* Positioning directly under the seconds */
+            left: 160px; /* Positioning under the last "00" (seconds) */
+        }
+
+        button {
+            font-size: 24px;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #start, #set, #startCountdown, #stopwatchBtn {
+            background-color: #3df13d;
+        }
+
+        #clear, #clearCountdown, #countdownBtn {
+            background-color: #f14e4e;
+        }
+
+        .countdown-input {
+            font-size: 24px;
+            padding: 10px;
+            width: 80px;
+            margin: 0 5px;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        #countdownSetup {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- First Screen: Selection -->
+        <div id="screen1" class="screen visible">
+            <button id="stopwatchBtn">Stopwatch</button>
+            <button id="countdownBtn">Countdown</button>
+        </div>
+
+        <!-- Second Screen: Stopwatch -->
+        <div id="screen2" class="screen">
+            <div id="timer">
+                <div class="time-container">
+                    <span class="hours">00:</span>
+                    <span class="minutes">00:</span>
+                    <span class="seconds">00</span>
+                    <div class="milliseconds">000</div>
+                </div>
+            </div>
+            <button id="start">Start</button>
+            <button id="clear">Clear</button>
+        </div>
+
+        <!-- Third Screen: Countdown Setup -->
+        <div id="screen3" class="screen">
+            <div id="countdownSetup">
+                <input type="number" id="hours" class="countdown-input" placeholder="HH" min="0" max="99">
+                <input type="number" id="minutes" class="countdown-input" placeholder="MM" min="0" max="59">
+                <input type="number" id="seconds" class="countdown-input" placeholder="SS" min="0" max="59">
+            </div>
+            <div id="timer">
+                <div class="time-container">
+                    <span class="hours">00:</span>
+                    <span class="minutes">00:</span>
+                    <span class="seconds">00</span>
+                    <div class="milliseconds">000</div>
+                </div>
+            </div>
+            <button id="set">Set</button>
+            <button id="clear">Clear</button>
+        </div>
+
+        <!-- Fourth Screen: Countdown -->
+        <div id="screen4" class="screen">
+            <div id="countdownTimer">
+                <div class="time-container">
+                    <span class="hours">00:</span>
+                    <span class="minutes">00:</span>
+                    <span class="seconds">00</span>
+                    <div class="milliseconds">000</div>
+                </div>
+            </div>
+            <button id="startCountdown">Start</button>
+            <button id="clearCountdown">Clear</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

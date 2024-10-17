@@ -1,0 +1,45 @@
+/* Home page */
+.option-card {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.option-card i {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Center and enlarge timers */
+#stopwatch-timer, #countdown-timer {
+  font-size: 6rem;
+  margin: 20px 0;
+}
+
+/* Countdown digit buttons */
+.digit-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  font-size: 1.5rem;
+}
+
+/* Countdown history */
+#countdown-history {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#countdown-history .list-group-item {
+  cursor: pointer;
+}
+
+#countdown-history .list-group-item:hover {
+  background-color: #f0f0f0;
+}

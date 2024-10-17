@@ -4,3 +4,5 @@
 **/.env.example
 **/node_modules
 **/prompts_master.md
+
+.idea

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stopwatch & Countdown</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar for title -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Stopwatch & Countdown App</span>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <div class="container mt-5">
+    <!-- Home Page -->
+    <div id="home" class="text-center">
+      <h1>Welcome to the Time Tools</h1>
+      <div class="d-flex justify-content-center mt-4 gap-5"> <!-- Added gap between options -->
+        <div class="option-card btn btn-outline-primary p-5" onclick="showStopwatch()"> <!-- Added button styles -->
+          <i class="bi bi-stopwatch" style="font-size: 5rem;"></i> <!-- Bootstrap icon should appear -->
+          <h2>Stopwatch</h2>
+        </div>
+        <div class="option-card btn btn-outline-success p-5" onclick="showCountdown()"> <!-- Added button styles -->
+          <i class="bi bi-hourglass-split" style="font-size: 5rem;"></i> <!-- Bootstrap icon should appear -->
+          <h2>Countdown</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stopwatch Section -->
+    <div id="stopwatch" class="text-center d-none">
+      <h2>Stopwatch</h2>
+      <p id="stopwatch-timer" class="display-2">00:00:00.000</p>
+      <button class="btn btn-primary btn-lg" onclick="startStopwatch()">Start</button>
+      <button class="btn btn-danger btn-lg" onclick="clearStopwatch()">Clear</button>
+      <br><br>
+      <button class="btn btn-secondary" onclick="goHome()">Back</button>
+    </div>
+
+    <!-- Countdown Section -->
+    <div id="countdown" class="text-center d-none">
+      <h2>Countdown</h2>
+      <p id="countdown-timer" class="display-2">00:00:00</p>
+
+      <!-- Digit input interface -->
+      <div class="digit-buttons">
+        <button class="btn btn-outline-primary" onclick="appendDigit(1)">1</button>
+        <button class="btn btn-outline-primary" onclick="appendDigit(2)">2</button>
+        <button class="btn btn-outline-primary" onclick="appendDigit(3)">3</button>
+        <button class="btn btn-outline-primary" onclick="appendDigit(4)">4</button>
+        <button class="btn btn-outline-primary" onclick="appendDigit(5)">5</button>
+        <button class="btn btn-outline-primary" onclick="appendDigit(6)">6</button>
+        <button class="btn btn-outline-primary" onclick="appendDigit(7)">7</button>
+        <button class="btn btn-outline-primary" onclick="appendDigit(8)">8</button>
+        <button class="btn btn-outline-primary" onclick="appendDigit(9)">9</button>
+        <button class="btn btn-outline-primary" onclick="appendDigit(0)">0</button>
+      </div>
+
+      <button class="btn btn-success btn-lg mt-3" onclick="startCountdown()">Set</button>
+      <button class="btn btn-danger btn-lg mt-3" onclick="clearCountdown()">Clear</button>
+      <br><br>
+      <button class="btn btn-secondary" onclick="goHome()">Back</button>
+
+      <!-- Countdown history -->
+      <div class="mt-5">
+        <h3>Last 10 Countdowns</h3>
+        <ul id="countdown-history" class="list-group"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .stopwatch-container {
+    text-align: center;
+  }
+  
+  #timer {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .start {
+    background-color: green;
+    color: white;
+    border: none;
+  }
+  
+  .clear {
+    background-color: red;
+    color: white;
+    border: none;
+  }
+  
+  button.blue {
+    background-color: blue;
+  }
+  
+  button.orange {
+    background-color: orange;
+  }

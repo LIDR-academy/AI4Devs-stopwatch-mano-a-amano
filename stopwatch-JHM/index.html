@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #display {
+            font-size: 60px;
+            padding: 20px;
+            border: 5px solid #333;
+            border-radius: 10px;
+            background-color: #e6e8ff;
+            color: black;
+            width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #startPauseButton {
+            background-color: #33cc33;
+            color: white;
+        }
+
+        #clearButton {
+            background-color: #ff3333;
+            color: white;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        #startPauseButton.pause {
+            background-color: #3333ff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="display">00:00:00:000</div>
+        <div class="buttons">
+            <button id="startPauseButton" onclick="startPause()">Start</button>
+            <button id="clearButton" onclick="clearTimer()">Clear</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
